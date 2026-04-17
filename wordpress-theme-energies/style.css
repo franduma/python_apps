@@ -1,0 +1,239 @@
+/*
+Theme Name: Energies Renouvelables Pro
+Theme URI: https://example.com/themes/energies-renouvelables-pro
+Author: GPT-5.3-Codex
+Author URI: https://openai.com
+Description: Thème WordPress moderne pour la vente de panneaux solaires, onduleurs, batteries et régulateurs MPPT.
+Version: 1.1.0
+Requires at least: 6.0
+Tested up to: 6.6
+Requires PHP: 7.4
+Text Domain: erp-theme
+*/
+
+:root {
+  --erp-green: #1f8f57;
+  --erp-green-dark: #15613b;
+  --erp-blue: #0f4c81;
+  --erp-bg: #f3f7f5;
+  --erp-text: #1d2d35;
+  --erp-white: #ffffff;
+  --erp-border: #d8e3dc;
+  --erp-shadow: 0 10px 30px rgba(9, 27, 19, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  color: var(--erp-text);
+  background: var(--erp-bg);
+  line-height: 1.65;
+}
+
+a { color: var(--erp-blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+.site-header {
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--erp-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .9rem 0;
+}
+
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.site-logo img { max-height: 46px; width: auto; }
+
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+}
+
+.menu a {
+  display: inline-block;
+  padding: .4rem .55rem;
+  border-radius: 6px;
+}
+
+.menu a:hover {
+  background: #edf5f1;
+  text-decoration: none;
+}
+
+.hero {
+  background: radial-gradient(circle at top right, #1e8c56 0%, #0f4c81 58%, #0a2f53 100%);
+  color: var(--erp-white);
+  padding: 4.2rem 0 4rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 999px;
+  padding: .28rem .8rem;
+  font-size: .85rem;
+  margin-bottom: .5rem;
+}
+
+.hero h1 { font-size: clamp(2rem, 3.2vw, 3.2rem); line-height: 1.2; margin: 0 0 .85rem; }
+.hero p { max-width: 720px; margin: 0 0 1rem; }
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+}
+
+.section { padding: 3rem 0; }
+.section-soft { background: #ecf5f0; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--erp-white);
+  border: 1px solid var(--erp-border);
+  border-radius: 14px;
+  padding: 1.1rem;
+  box-shadow: var(--erp-shadow);
+}
+
+.card h3 { margin-top: .1rem; margin-bottom: .4rem; }
+
+.btn {
+  display: inline-block;
+  background: var(--erp-green);
+  color: var(--erp-white);
+  border: 1px solid transparent;
+  padding: .72rem 1rem;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: all .2s ease;
+}
+
+.btn:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+  background: var(--erp-green-dark);
+}
+
+.btn-outline {
+  background: transparent;
+  color: currentColor;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.site-header .btn-outline {
+  color: var(--erp-green-dark);
+  border-color: var(--erp-green-dark);
+}
+
+.site-header .btn-outline:hover {
+  color: var(--erp-white);
+}
+
+.check-list {
+  margin: .5rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.price {
+  color: var(--erp-green-dark);
+  font-weight: 700;
+}
+
+.quote-card {
+  border: 1px solid #bfd3c5;
+}
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  border: 1px solid var(--erp-border);
+  border-radius: 12px;
+  padding: .8rem;
+  background: var(--erp-white);
+  box-shadow: var(--erp-shadow);
+}
+
+.woocommerce div.product {
+  background: var(--erp-white);
+  border: 1px solid var(--erp-border);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: var(--erp-shadow);
+}
+
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit {
+  background: var(--erp-green);
+  color: var(--erp-white);
+  border-radius: 8px;
+}
+
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce #respond input#submit:hover {
+  background: var(--erp-green-dark);
+  color: var(--erp-white);
+}
+
+.site-footer {
+  margin-top: 2rem;
+  background: #0f261b;
+  color: #d6e3db;
+  padding: 1.8rem 0;
+}
+
+@media (max-width: 980px) {
+  .hero-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .header-inner { flex-wrap: wrap; }
+  .menu { flex-wrap: wrap; }
+}
