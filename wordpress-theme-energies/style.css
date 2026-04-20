@@ -237,3 +237,62 @@ a:hover { text-decoration: underline; }
   .header-inner { flex-wrap: wrap; }
   .menu { flex-wrap: wrap; }
 }
+
+/* WooCommerce archive sidebar (Filter Everything). */
+.erp-shop-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 3fr);
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.erp-shop-main {
+  min-width: 0;
+}
+
+.erp-shop-sidebar {
+  background: var(--erp-white);
+  border: 1px solid var(--erp-border);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: var(--erp-shadow);
+  position: sticky;
+  top: 90px;
+}
+
+.erp-shop-sidebar .widget-title,
+.erp-shop-sidebar .wpc-filter-title,
+.erp-shop-sidebar .wpc-filter-title-text {
+  color: var(--erp-blue);
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0 0 .65rem;
+}
+
+.erp-shop-sidebar label,
+.erp-shop-sidebar .wpc-term-item-content-wrapper,
+.erp-shop-sidebar .wpc-filter-content {
+  color: var(--erp-text);
+  font-size: .95rem;
+}
+
+.erp-shop-sidebar input[type="checkbox"] {
+  accent-color: var(--erp-green);
+}
+
+.erp-shop-sidebar .wpc-filter-chip,
+.erp-shop-sidebar .wpc-chip-reset-all {
+  border-radius: 999px;
+  border-color: var(--erp-border);
+  color: var(--erp-blue);
+}
+
+@media (max-width: 980px) {
+  .erp-shop-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .erp-shop-sidebar {
+    position: static;
+  }
+}
