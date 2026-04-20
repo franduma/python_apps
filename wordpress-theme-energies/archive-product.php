@@ -13,16 +13,14 @@ get_header();
 ?>
 <main class="section">
     <div class="container erp-shop-layout">
-        <aside class="erp-shop-sidebar" aria-label="<?php esc_attr_e('Filtres produits', 'erp-theme'); ?>">
-            <?php if (is_active_sidebar('erp-shop-sidebar')) : ?>
-                <?php dynamic_sidebar('erp-shop-sidebar'); ?>
-            <?php else : ?>
-                <?php echo do_shortcode('[fe_widget id="587"]'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-            <?php endif; ?>
-        </aside>
+        <?php get_sidebar('shop'); ?>
 
         <section class="erp-shop-main">
-            <?php woocommerce_content(); ?>
+            <?php if (function_exists('woocommerce_content')) : ?>
+                <?php woocommerce_content(); ?>
+            <?php else : ?>
+                <p><?php esc_html_e('WooCommerce doit être activé pour afficher la boutique.', 'erp-theme'); ?></p>
+            <?php endif; ?>
         </section>
     </div>
 </main>

@@ -246,6 +246,10 @@ a:hover { text-decoration: underline; }
   align-items: start;
 }
 
+.erp-shop-main {
+  min-width: 0;
+}
+
 .erp-shop-sidebar {
   background: var(--erp-white);
   border: 1px solid var(--erp-border);
