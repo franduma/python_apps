@@ -7,11 +7,11 @@
 
 get_header();
 ?>
-<main class="section">
-    <div class="container">
+<main class="erp-section">
+    <div class="erp-container">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-                <article class="card" style="margin-bottom:1rem;">
+                <article class="erp-card" style="margin-bottom:1rem;">
                     <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                     <?php the_excerpt(); ?>
                 </article>

@@ -57,12 +57,23 @@ Fichiers clés :
 4. **WooCommerce** : vérifier la page Boutique et les fiches produits.
 
 ## Astuce: créer le fichier ZIP rapidement
-Depuis un terminal dans le dossier parent :
+Depuis un terminal dans un environnement où le dossier existe (ta machine locale, un serveur SSH, ou cet espace de travail), exécute :
 ```bash
+cd /workspace/python_apps
 zip -r wordpress-theme-energies.zip wordpress-theme-energies
 ```
+
+> Important : ces commandes **ne se lancent pas dans l’interface web github.com**.
+> Elles se lancent dans un terminal (local, SSH, ou CI) ayant accès aux fichiers.
 
 ## Vérification rapide
 - Le thème apparaît dans **Apparence > Thèmes**.
 - La page d’accueil affiche la section produits + devis.
 - Les pages WooCommerce reprennent le style du thème.
+
+## Compatibilité extension de devis (`solithium-wizard`)
+Pour limiter les conflits CSS/JS :
+- Les classes du thème ont été préfixées `erp-` (`erp-card`, `erp-btn`, `erp-section`, etc.).
+- Les styles sont scoppés sous la classe `body.erp-theme`.
+
+Si ton extension charge sa propre UI (boutons/cartes), elle ne doit plus être affectée par les classes génériques du thème.

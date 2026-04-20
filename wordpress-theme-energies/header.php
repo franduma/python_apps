@@ -13,13 +13,13 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<header class="site-header">
-    <div class="container header-inner">
-        <div class="brand-wrap">
+<header class="erp-site-header">
+    <div class="erp-container erp-header-inner">
+        <div class="erp-brand-wrap">
             <?php if (has_custom_logo()) : ?>
-                <div class="site-logo"><?php the_custom_logo(); ?></div>
+                <div class="erp-site-logo"><?php the_custom_logo(); ?></div>
             <?php endif; ?>
-            <p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></p>
+            <p class="erp-site-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></p>
         </div>
 
         <nav aria-label="<?php esc_attr_e('Menu principal', 'erp-theme'); ?>">
@@ -28,11 +28,11 @@
                 'theme_location' => 'primary',
                 'container'      => false,
                 'fallback_cb'    => false,
-                'menu_class'     => 'menu',
+                'menu_class'     => 'erp-menu',
             ]);
             ?>
         </nav>
 
-        <a class="btn btn-outline" href="#devis"><?php esc_html_e('Demander un devis', 'erp-theme'); ?></a>
+        <a class="erp-btn erp-btn-outline" href="#devis"><?php esc_html_e('Demander un devis', 'erp-theme'); ?></a>
     </div>
 </header>

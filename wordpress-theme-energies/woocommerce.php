@@ -7,8 +7,8 @@
 
 get_header();
 ?>
-<main class="section">
-    <div class="container woocommerce-container">
+<main class="erp-section">
+    <div class="erp-container erp-woocommerce-container">
         <?php woocommerce_content(); ?>
     </div>
 </main>

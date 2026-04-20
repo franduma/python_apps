@@ -7,10 +7,10 @@
 
 get_header();
 ?>
-<main class="section">
-    <div class="container">
+<main class="erp-section">
+    <div class="erp-container">
         <h1><?php post_type_archive_title(); ?></h1>
-        <div class="grid">
+        <div class="erp-grid">
             <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
                     <?php get_template_part('template-parts/content', 'product'); ?>

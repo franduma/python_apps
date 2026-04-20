@@ -170,3 +170,10 @@ function erp_render_quote_shortcode(): string {
 
     return do_shortcode($shortcode);
 }
+
+function erp_add_body_class(array $classes): array {
+    $classes[] = 'erp-theme';
+
+    return $classes;
+}
+add_filter('body_class', 'erp_add_body_class');

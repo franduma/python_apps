@@ -5,15 +5,15 @@
  * @package EnergiesRenouvelablesPro
  */
 ?>
-<footer class="site-footer">
-    <div class="container">
+<footer class="erp-site-footer">
+    <div class="erp-container">
         <p>&copy; <?php echo esc_html((string) gmdate('Y')); ?> <?php bloginfo('name'); ?> — <?php esc_html_e('Solutions photovoltaïques professionnelles.', 'erp-theme'); ?></p>
         <?php
         wp_nav_menu([
             'theme_location' => 'footer',
             'container'      => false,
             'fallback_cb'    => false,
-            'menu_class'     => 'menu',
+            'menu_class'     => 'erp-menu',
         ]);
         ?>
     </div>
