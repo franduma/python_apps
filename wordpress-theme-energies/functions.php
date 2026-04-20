@@ -37,6 +37,21 @@ function erp_theme_assets(): void {
 }
 add_action('wp_enqueue_scripts', 'erp_theme_assets');
 
+
+function erp_register_sidebars(): void {
+    register_sidebar([
+        'name'          => __('Sidebar boutique', 'erp-theme'),
+        'id'            => 'erp-shop-sidebar',
+        'description'   => __('Zone de filtres WooCommerce (Filter Everything).', 'erp-theme'),
+        'before_widget' => '<section id="%1$s" class="widget erp-filter-widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ]);
+}
+add_action('widgets_init', 'erp_register_sidebars');
+
+
 function erp_customize_register(WP_Customize_Manager $wp_customize): void {
     $wp_customize->add_section('erp_theme_options', [
         'title'    => __('Options Energies Renouvelables Pro', 'erp-theme'),
